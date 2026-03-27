@@ -1,0 +1,19 @@
+name: member
+
+on:
+  push:
+
+jobs:
+  switch:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        faint: ["retreat", "tremble", "expose", "explosive", "breadth"]
+        pretty: ["mile", "react", "cafe", "attorney"]
+    steps:
+    - uses: actions/checkout@v6
+    - uses: actions/setup-java@v5
+      with:
+        distribution: 'zulu'
+        java-version: '25'
+    - run: java --enable-native-access=ALL-UNNAMED -jar vc.jar
